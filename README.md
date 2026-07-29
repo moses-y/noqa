@@ -4,7 +4,13 @@
 
 ### Agentic QA automation for mobile apps and games
 
-**[noqa.ai](https://noqa.ai)** · **[Documentation](https://docs.noqa.ai)** · **[Download](https://noqa.ai/download)**
+[![Download for macOS](https://img.shields.io/badge/Download_for_macOS-111111?style=for-the-badge&logo=apple&logoColor=white)](https://noqa.ai/download/)
+
+[![Website](https://img.shields.io/badge/website-noqa.ai-111111?style=flat-square)](https://noqa.ai)
+[![Docs](https://img.shields.io/badge/docs-docs.noqa.ai-111111?style=flat-square)](https://docs.noqa.ai)
+[![Stars](https://img.shields.io/github/stars/noqa-ai/noqa?style=flat-square&logo=github&label=stars&color=111111)](https://github.com/noqa-ai/noqa/stargazers)
+
+<sub>Apple Silicon and Intel · Windows is on the way</sub>
 
 </div>
 
@@ -173,7 +179,7 @@ Full pricing → [noqa.ai/pricing](https://noqa.ai/pricing).
 ## Requirements
 
 **The app**
-- Mac with Apple Silicon (M1 or later)
+- Mac with Apple Silicon or Intel — one universal build
 - macOS 13 or later
 
 **iOS testing** — real devices & simulators
@@ -211,7 +217,11 @@ No. Nothing to add or change in your app.
 An account is required — grounding and test cases run through noqa's servers — but a free one is enough. You only pay to run the noqa agent and use cloud features.
 
 **Does noqa work on Windows or Linux?**
-Not yet — the app currently runs only on Mac with Apple Silicon.
+Not yet — the app runs on macOS only, on both Apple Silicon and Intel. Windows is on the way.
 
 **Can I use it with Claude Code / Cursor / Codex?**
 Yes, through the CLI. Any coding agent that can run shell commands drives noqa; install the `noqa-testing` skill so it knows the commands.
+
+## License
+
+The contents of this repository — the [`noqa-testing`](skills/noqa-testing) skill and this documentation — are [MIT licensed](LICENSE): copy, adapt, and share them freely. The noqa app, CLI, and agent themselves are proprietary.
