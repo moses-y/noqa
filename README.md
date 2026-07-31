@@ -2,7 +2,7 @@
 
 <a href="https://noqa.ai"><img src="https://cdn.noqa.ai/media/logo.png" alt="noqa" width="240" /></a>
 
-### Agentic QA automation for mobile apps and games
+### Automated mobile testing tool for apps and games
 
 [![Download for macOS](https://img.shields.io/badge/Download_for_macOS-111111?style=for-the-badge&logo=apple&logoColor=white)](https://noqa.ai/download/)
 
@@ -14,7 +14,7 @@
 
 </div>
 
-noqa is an AI agent that tests mobile apps and games from natural-language test cases. It works purely from screenshots — with no accessibility tree or view hierarchy — and controls the real app on iOS and Android devices, simulators, or in the cloud, returning per-step pass/fail with video and screenshots.
+noqa is an automated mobile testing tool for apps and games. Write tests in plain English and run them on a real device. noqa works from screenshots, so there are no locators, no code and no SDK. As teams ship more code with AI, noqa automates slow manual testing.
 
 - **Any framework, even games — no locators** — native, React Native, Flutter, Unity, Unreal, and non-native UI (maps, canvases, WebViews, ads) all test the same, with no locators or scripts.
 - **CLI with automatic grounding** — your coding agent drives a real device from the terminal: read the screen, act by plain-language description (noqa grounds it — no coordinates), and manage test cases.
@@ -28,7 +28,7 @@ noqa is an AI agent that tests mobile apps and games from natural-language test 
 
 </div>
 
-## Purely visual test automation
+## Purely vision-based test automation
 
 noqa works from screenshots, unlike locator-based tools (Appium · Maestro · XCUITest).
 
@@ -195,7 +195,7 @@ Full pricing → [noqa.ai/pricing](https://noqa.ai/pricing).
 
 New to agentic testing? The [guide](https://docs.noqa.ai/guide/introduction) covers it end to end:
 
-- [Introduction](https://docs.noqa.ai/guide/introduction) — what agentic QA is and why visual testing is different
+- [Introduction](https://docs.noqa.ai/guide/introduction) — what agentic QA is and why vision-based testing is different
 - [How the noqa agent works](https://docs.noqa.ai/guide/how-noqa-agent-works) — the perception–decision–action loop, actions, speed, and limits
 - [Writing good test cases](https://docs.noqa.ai/guide/writing-test-cases) — phrasing cases the agent can run reliably
 - [Local vs cloud](https://docs.noqa.ai/guide/local-vs-cloud) — when to use local devices and when to use the cloud
