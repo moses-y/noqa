@@ -2,7 +2,7 @@
 
 Runs **already-saved** test cases (by number) autonomously on a connected device using the noqa agent. Requires a paid account with credits.
 
-> Developing a new scenario? Drive it on the device first by describing the target elements in plain language and iterate before saving the case — see [Debug directly on device](debug-on-device.md).
+> Writing or changing a case? Take the whole path — [Full-cycle testing](full-cycle-testing.md) — which ends with this run.
 
 > References: [Devices](../references/devices.md) · [Run Tests](../references/run.md) · [Builds](../references/builds.md) · [iOS Native Builds](../references/builds-ios-native.md) · [React Native Builds](../references/builds-react-native.md) · [Android Builds](../references/builds-android.md)
 

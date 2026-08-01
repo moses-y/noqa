@@ -10,10 +10,10 @@ List available devices and connect the one to test on. See [Devices](../referenc
 How much you set up here depends on **why** you're debugging:
 
 - **Exploring or fixing something** — whatever's already installed is fine. If the app is installed and running (e.g. React Native via Metro, or installed manually), skip to step 3.
-- **Developing a test case before writing it** (see [Test Cases & Reusable Flows](test-cases.md)) — start from a **clean state** so your walkthrough matches how a saved run executes (every saved run reinstalls the app from the build). Don't rely on leftover state from a prior session. Reset first: [Install iOS](../references/install-ios.md#clean-install-reset-app-state) · [Install Android](../references/install-android.md#clean-install-reset-app-state).
+- **Developing a test case before writing it** (step 4 of [Full-cycle testing](full-cycle-testing.md)) — start from a **clean state** so your walkthrough matches how a saved run executes (every saved run reinstalls the app from the build). Don't rely on leftover state from a prior session. Reset first: [Install iOS](../references/install-ios.md#clean-install-reset-app-state) · [Install Android](../references/install-android.md#clean-install-reset-app-state).
 
 To get the app onto the device:
-**Get the build** — ask the user for the path to the binary. If they don't have one, build it first: [iOS Native Builds](../references/builds-ios-native.md) · [React Native Builds](../references/builds-react-native.md) · [Android Builds](../references/builds-android.md).
+**Get the build** — use the binary or the build command the user gave you; otherwise work it out from the repo (README, build scripts, CI config) and build it: [iOS Native Builds](../references/builds-ios-native.md) · [React Native Builds](../references/builds-react-native.md) · [Android Builds](../references/builds-android.md).
 **Install the build** — [iOS](../references/install-ios.md) · [Android](../references/install-android.md).
 **Launch the app** — activate it by bundle ID/App ID. See [Inspect & App Control](../references/inspect-and-app-control.md).
 

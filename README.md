@@ -17,7 +17,7 @@
 noqa is an automated mobile testing tool for apps and games. Write tests in plain English and run them on a real device. noqa works from screenshots, so there are no locators, no code and no SDK. As teams ship more code with AI, noqa automates slow manual testing.
 
 - **Any framework, even games — no locators** — native, React Native, Flutter, Unity, Unreal, and non-native UI (maps, canvases, WebViews, ads) all test the same, with no locators or scripts.
-- **CLI with automatic grounding** — your coding agent drives a real device from the terminal: read the screen, act by plain-language description (noqa grounds it — no coordinates), and manage test cases.
+- **CLI with automatic grounding** — your coding agent runs the whole testing cycle from the terminal: it drives a real device by plain-language description (noqa grounds it — no coordinates), writes the test cases, and runs them until they pass.
 
   `noqa action tap -d "Blue login button at the bottom"`
 - **Runs on real devices** — plus simulators, emulators, and cloud devices.
@@ -48,7 +48,7 @@ noqa works from screenshots, unlike locator-based tools (Appium · Maestro · XC
 
 **2. Create a free account.**
 
-**3. Install the CLI and skill.** In the app, open **Settings → Tools → Install CLI** (adds `noqa` to your `PATH`) — and click **Install skill** too, so your coding agent knows the commands out of the box. Restart your terminal afterward. The skill also lives here in [`skills/noqa-testing`](skills/noqa-testing) if you'd rather add it manually.
+**3. Install the CLI and skill.** In the app, open **Settings → CLI & Agents** and click **Install** on **CLI Tool** (adds `noqa` to your `PATH`) — then **Install globally** on **Mobile Testing Skill**, so your coding agent knows the commands out of the box. Restart your terminal afterward. The skill also lives here in [`skills/noqa-testing`](skills/noqa-testing) if you'd rather add it manually.
 
 **4. Connect a device.** List devices, pick one, and connect:
 
@@ -127,6 +127,8 @@ noqa action alert --action accept                       # accept a system alert 
 
 Full command reference: [docs.noqa.ai/docs/cli](https://docs.noqa.ai/docs/cli).
 
+If you want your agent to run the whole testing cycle — not just drive the device — see [Full-cycle testing](https://docs.noqa.ai/guide/full-cycle-testing).
+
 ## Test cases
 
 A test case is a title, optional tags, and one or more flows. Each flow is written in plain language — no code, no selectors.
@@ -199,7 +201,8 @@ New to agentic testing? The [guide](https://docs.noqa.ai/guide/introduction) cov
 - [How the noqa agent works](https://docs.noqa.ai/guide/how-noqa-agent-works) — the perception–decision–action loop, actions, speed, and limits
 - [Writing good test cases](https://docs.noqa.ai/guide/writing-test-cases) — phrasing cases the agent can run reliably
 - [Local vs cloud](https://docs.noqa.ai/guide/local-vs-cloud) — when to use local devices and when to use the cloud
-- [CLI for agents](https://docs.noqa.ai/guide/cli-for-agents) — let a coding agent drive the CLI
+- [Device CLI](https://docs.noqa.ai/guide/device-cli) — let a coding agent drive a device
+- [Full-cycle testing](https://docs.noqa.ai/guide/full-cycle-testing) — from a build to passing tests, with your agent
 - [Best practices](https://docs.noqa.ai/guide/best-practices-games) — games, in-app purchases, cross-app flows, non-native UI, and more
 
 ## FAQ
