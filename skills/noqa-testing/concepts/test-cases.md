@@ -2,7 +2,7 @@
 
 > This page is the **data model** — what a case, flow, reusable flow, and app context are.
 > For how to phrase good instructions and results see [Writing Good Test Cases](writing-test-cases.md).
-> For the authoring process and commands see the [workflow](../workflows/test-cases.md).
+> For the authoring process and commands see the [workflow](../workflows/generate-test-cases.md).
 
 noqa is a mobile testing platform. You describe test scenarios in plain English — the AI agent runs them on a real device or simulator and reports pass/fail with screenshots.
 
@@ -52,3 +52,13 @@ Always grant any permission prompts that appear.
 Sign in and go to the Profile screen.
 Search for "shoes" on the Home screen.
 ```
+
+### Setting up app context
+
+Do this before authoring cases — a shared fact belongs here, not repeated in every flow.
+
+1. **Read the current context** — `noqa apps get APP` shows it.
+2. **Compose the full replacement** — `apps update` overwrites `app_context`, so include both the old and the new content. Confirm the exact JSON with the user before sending.
+3. **Update** — `noqa apps update APP '{"app_context": "..."}'`.
+
+Commands: [Apps, Cases & Flows](../references/apps-cases-and-flows.md).

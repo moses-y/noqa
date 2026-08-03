@@ -1,9 +1,9 @@
 # Writing Good Test Cases
 
 > This page is the **quality guide** — how to phrase instructions and results so the agent runs them reliably.
-> Before saving a case, debug-run the scenario on a device from a clean state — see [Debug on device](../workflows/debug-on-device.md).
+> Before saving a case, run the scenario on a device from a clean state — see [Device control](../workflows/device-control.md).
 > For the data model (what a case, flow, or app context *is*) see [Test Cases](test-cases.md).
-> For the step-by-step authoring process and commands see the [workflow](../workflows/test-cases.md).
+> For the step-by-step authoring process and commands see the [workflow](../workflows/generate-test-cases.md).
 
 A good test case reads like instructions you'd hand a careful human tester: clear goals, in order, each with a concrete way to tell it worked. Vague, run-on, or tap-by-tap instructions are the main reason a run fails for the wrong reason.
 
@@ -80,7 +80,7 @@ Describe what should be visible on screen after the flow. The more concrete, the
 
 ## A complete example
 
-> Before saving the flows below, debug-run the whole scenario on a device from a clean state ([Debug on device](../workflows/debug-on-device.md)) to confirm the path and the expected results.
+> Before saving the flows below, run the whole scenario on a device from a clean state ([Device control](../workflows/device-control.md)) to confirm the path and the expected results.
 
 A well-formed case: one goal per flow, a numbered list where a flow has several actions, and a concrete result on each.
 
@@ -101,7 +101,7 @@ A well-formed case: one goal per flow, a numbered list where a flow has several 
 }
 ```
 
-Note: the sign-in step is a separate flow because it's reused across cases — in practice reference it as a reusable flow by `id` instead of inlining it (see the [workflow](../workflows/test-cases.md)).
+Note: the sign-in step is a separate flow because it's reused across cases — in practice reference it as a reusable flow by `id` instead of inlining it (see the [workflow](../workflows/generate-test-cases.md)).
 
 ## Tags
 

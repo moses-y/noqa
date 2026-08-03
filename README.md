@@ -127,7 +127,7 @@ noqa action alert --action accept                       # accept a system alert 
 
 Full command reference: [docs.noqa.ai/docs/cli](https://docs.noqa.ai/docs/cli).
 
-If you want your agent to run the whole testing cycle — not just drive the device — see [Full-cycle testing](https://docs.noqa.ai/guide/full-cycle-testing).
+If you want your agent to run the whole testing cycle — not just drive the device — see [Generate test cases with AI](https://docs.noqa.ai/guide/full-cycle-testing).
 
 ## Test cases
 
@@ -202,7 +202,7 @@ New to agentic testing? The [guide](https://docs.noqa.ai/guide/introduction) cov
 - [Writing good test cases](https://docs.noqa.ai/guide/writing-test-cases) — phrasing cases the agent can run reliably
 - [Local vs cloud](https://docs.noqa.ai/guide/local-vs-cloud) — when to use local devices and when to use the cloud
 - [Device CLI](https://docs.noqa.ai/guide/device-cli) — let a coding agent drive a device
-- [Full-cycle testing](https://docs.noqa.ai/guide/full-cycle-testing) — from a build to passing tests, with your agent
+- [Generate test cases with AI](https://docs.noqa.ai/guide/full-cycle-testing) — your agent writes the cases, walks them on a device, and runs them
 - [Best practices](https://docs.noqa.ai/guide/best-practices-games) — games, in-app purchases, cross-app flows, non-native UI, and more
 
 ## FAQ

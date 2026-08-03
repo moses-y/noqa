@@ -1,8 +1,6 @@
-# Inspect & App Control
+# Screen
 
-Shared debug commands: screen inspection, app lifecycle, and alerts. The interactive actions (tap/swipe/drag/input) target elements by plain-language description — see [Actions by description](actions-grounding.md) — or, as a fallback, by explicit relative coordinates (`0–1000`) — see [Actions by coordinates](actions-coordinates.md).
-
-## Screen inspection
+Reading what is on the device. Acting on what you find is [Actions](actions.md).
 
 ```bash
 noqa screen                        # compact UI element tree
@@ -17,22 +15,3 @@ noqa screenshot /tmp/screen.png    # save screenshot to file, to visually verify
 Call `noqa screen` directly — do not pipe through `grep`, `awk`, or any other filter. Parse the raw output yourself. Filtering can hide elements you need.
 
 The screen tree includes a `relative_bbox_2d="[xmin, ymin, xmax, ymax]"` attribute (relative `0–1000` on both axes) for each element, giving you its position and size on screen. Use it to understand layout and disambiguate elements when writing a description. It's also what you read for the coordinate fallback: the element center is `x = (xmin + xmax) / 2`, `y = (ymin + ymax) / 2`.
-
-## App lifecycle
-
-```bash
-noqa action activate-app --bundle-id com.example.app
-noqa action terminate-app --bundle-id com.example.app
-noqa action restart-app --bundle-id com.example.app
-noqa action background-app
-noqa action open-url --url "https://example.com"
-```
-
-## Alert
-
-Prefer the `alert` command over tapping a button when interacting with a system alert.
-
-```bash
-noqa action alert --action accept
-noqa action alert --action dismiss
-```
