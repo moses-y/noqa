@@ -14,4 +14,4 @@ noqa screenshot /tmp/screen.png    # save screenshot to file, to visually verify
 
 Call `noqa screen` directly — do not pipe through `grep`, `awk`, or any other filter. Parse the raw output yourself. Filtering can hide elements you need.
 
-The screen tree includes a `relative_bbox_2d="[xmin, ymin, xmax, ymax]"` attribute (relative `0–1000` on both axes) for each element, giving you its position and size on screen. Use it to understand layout and disambiguate elements when writing a description. It's also what you read for the coordinate fallback: the element center is `x = (xmin + xmax) / 2`, `y = (ymin + ymax) / 2`.
+Each element carries a `relative_bbox_2d="[xmin, ymin, xmax, ymax]"` (relative `0–1000` on both axes) — this is where your tap coordinates come from: center is `((xmin+xmax)/2, (ymin+ymax)/2)`. When the tree gives you nothing to act on, see [Targeting an element](actions.md#targeting-an-element).

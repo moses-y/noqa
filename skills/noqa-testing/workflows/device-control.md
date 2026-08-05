@@ -1,6 +1,6 @@
 # Workflow: Device Control
 
-You drive the device yourself — inspect, then tap/swipe/drag/type. **Prefer describing the target element in plain language** — noqa resolves its on-screen location for you; explicit relative coordinates read from the screen tree are the fallback. Both, and every other command, are in [Actions](../references/actions.md); reading the screen is [Screen](../references/screen.md).
+You drive the device yourself — inspect, then tap/swipe/drag/type. Act on coordinates from the screen tree; ground by description when the tree can't give you a target — [Actions](../references/actions.md). Reading the screen is [Screen](../references/screen.md).
 
 The whole device is available, not one app. You can:
 - install a local build and debug that app;
@@ -26,7 +26,7 @@ Developing a test case (step 4 of [Generate test cases](generate-test-cases.md))
 Drive the UI as a loop — never fire an action blind:
 
 1. **Inspect** — read the current screen to confirm the target is present and the UI is in the expected state. See [Screen](../references/screen.md).
-2. **Act** — perform one action, preferably by describing the target element; fall back to explicit relative coordinates (`0–1000`) only if grounding mislocates. See [Actions](../references/actions.md).
+2. **Act** — one action on coordinates from the tree, or by description if the tree gave none. See [Actions](../references/actions.md).
 3. **Verify** — inspect the screen again to confirm the state changed as expected, capturing a screenshot for a visual check if needed. See [Screen](../references/screen.md).
 4. Repeat for the next action.
 

@@ -17,7 +17,7 @@
 noqa is an automated mobile testing tool for apps and games. Write tests in plain English and run them on a real device. noqa works from screenshots, so there are no locators, no code and no SDK. As teams ship more code with AI, noqa automates slow manual testing.
 
 - **Any framework, even games — no locators** — native, React Native, Flutter, Unity, Unreal, and non-native UI (maps, canvases, WebViews, ads) all test the same, with no locators or scripts.
-- **CLI with automatic grounding** — your coding agent runs the whole testing cycle from the terminal: it drives a real device by plain-language description (noqa grounds it — no coordinates), writes the test cases, and runs them until they pass.
+- **CLI with automatic grounding** — your coding agent runs the whole testing cycle from the terminal: it reads the screen, drives a real device, writes the test cases, and runs them until they pass. Where the screen exposes no usable element tree — a game, a canvas, a WebView — it targets by plain-language description and noqa grounds it.
 
   `noqa action tap -d "Blue login button at the bottom"`
 - **Runs on real devices** — plus simulators, emulators, and cloud devices.
@@ -67,8 +67,8 @@ noqa action activate-app --bundle-id com.example.app
 
 ```bash
 noqa screen                                    # inspect: read the current UI as a structured element tree
-noqa action tap -d "Login button"              # act: one step, by description — grounding (recommended)
-noqa action tap --x 500 --y 320                # …or by relative coordinates (0–1000) as a fallback
+noqa action tap --x 500 --y 320                # act: one step, on relative coordinates (0–1000) from the tree
+noqa action tap -d "Login button"              # …or by description — grounding, when the tree has no usable target
 noqa screen                                    # verify: confirm the state changed as expected
 ```
 
@@ -94,7 +94,16 @@ Your agent reads the screen on *every* step, so read cost dominates. The cleaned
 
 ### Actions
 
-Every gesture targets an element two ways. Working out pixel coordinates is error-prone for a coding agent, so it's easier to use automatic grounding — describe the element in plain language and noqa places it on screen.
+Every gesture targets an element two ways. `noqa screen` already returns each element's box, so on a screen the tree describes well you act straight on those coordinates (0–1000) — nothing to resolve, nothing to pay for:
+
+```bash
+noqa action tap --x 500 --y 320                         # tap
+noqa action swipe --x1 500 --y1 800 --x2 500 --y2 200   # swipe between two points
+noqa action drag --x1 300 --y1 500 --x2 700 --y2 500    # drag between two points
+noqa action input --x 500 --y 640 --text "hi@noqa.ai"   # tap a field and type
+```
+
+When the tree gives you nothing to act on — a game, a canvas, a WebView, an ad overlay, or coordinates that didn't work — describe the element in plain language instead and noqa **grounds** it, working from what's rendered rather than from the tree:
 
 ```bash
 noqa action tap -d "Blue login button at the bottom"    # tap
@@ -103,15 +112,6 @@ noqa action tap -d "Login button" --duration 2          # long-press, in seconds
 noqa action swipe -d "photo carousel, swipe left"       # swipe
 noqa action drag -d "card onto the drop zone"           # drag
 noqa action input -d "email field" --text "hi@noqa.ai"  # type into a field
-```
-
-Or target by coordinates (0–1000, read from `noqa screen`) as a fallback:
-
-```bash
-noqa action tap --x 500 --y 320                         # tap
-noqa action swipe --x1 500 --y1 800 --x2 500 --y2 200   # swipe between two points
-noqa action drag --x1 300 --y1 500 --x2 700 --y2 500    # drag between two points
-noqa action input --x 500 --y 640 --text "hi@noqa.ai"   # tap a field and type
 ```
 
 App and system controls take no target:
