@@ -46,7 +46,7 @@ Run already-saved cases by number on the connected device — for smoke/regressi
 
 ### 4. Run tests in cloud
 
-Not implemented yet — in development.
+Cloud runs exist, but not in the CLI — they can only be started from the noqa app, web or the API, so the user has to do it themselves.
 
 ## Rules
 
